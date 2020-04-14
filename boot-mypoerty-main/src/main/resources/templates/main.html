@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h2>当前用户：</h2><h2 th:text="${session.id}">当前用户</h2>
+<table width="400px" border="1" cellpadding="1" cellspacing="1">
+ <tr>
+    <th>诗题</th>
+    <th>派别</th>
+    <th>内容</th>
+    <th>heat</th>
+   
+    <th>评论</th>
+    <th>删除</th>
+     <th>点赞</th>
+      <th>修改</th>
+</tr>
+
+<tr th:each="u,iterStat:${poetry}">
+<td th:text="${u.name}"></td>
+<td th:text="${u.style}"></td>
+<td th:text="${u.context}"></td>
+<td th:text="${heat[iterStat.index].heat}"></td>
+<td><a th:href="@{/commond/}+${u.name}">评论</a></td>
+<td><a th:href="@{/checkcommond/}+${u.name}">查看评论</a></td>
+<td><a th:href="@{/like/}+${u.name}">点赞</a></td>
+</tr>
+</table>
+</body>
+</html>

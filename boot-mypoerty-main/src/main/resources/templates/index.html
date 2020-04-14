@@ -1,0 +1,18 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>欢迎访问！<br>请登录~~</h1>
+<br>
+<form  action="login" method="get" >
+<input type="text" name="userid">
+<input type="text" name="password">
+<input type="submit" value="登录">
+</form>
+<h4 th:text="${msg}">..........</h4>
+</body>
+</html>

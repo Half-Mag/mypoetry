@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<br>
+<form th:action="@{/addcommond/}+${poetryname11}" method="get" >
+<input type="text" name="words">
+
+<input type="submit" value="发布评论">
+</form>
+
+<h1 th:text="${poetryname11}"></h1>
+</body>
+
+</html>
